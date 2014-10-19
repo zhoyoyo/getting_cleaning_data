@@ -13,3 +13,5 @@ This is the tidy data file output from Run_analysis.R.
 ## CodeBook.md
 
 The Code Book describes the variables and their units in the tidy data file, and the decisions I made along the data processing process.
+
+All work belongs to @zhoyoyo.
