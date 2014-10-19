@@ -101,7 +101,7 @@
 ## Extracts only the measurements on the mean and standard deviation for each measurement
 
   # get the index of variables with mean() or std() in the variable name
-  indexList <- grep(pattern='(.mean..|.std..)',colnames(data),ignore.case=T)
+  indexList <- grep(pattern='(mean|std)',colnames(data),ignore.case=T)
   newData <- data[indexList]
   newData$id <- data$id
   newData$activity <- data$activity
@@ -133,8 +133,7 @@
   #this is to do the work that STEP 3 didn't do the best
   newData_4 <- newData_3[,-1]
   colnames(newData_4)[1] <- 'activity'
-  #write back to the original dataset since this is the one we want to get as the first tidy data
-  data <- newData_4
+  
 
 
 
@@ -147,4 +146,3 @@
   data5 <- ddply(newData_4,.(id,activity),numcolwise(mean))
   #write the table for upload to your current directory
   write.table(data5,'data_cleaned.txt',sep='\t',row.name=F)
-  
